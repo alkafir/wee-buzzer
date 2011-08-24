@@ -20,16 +20,16 @@ import os
 import weechat
 import time
 
-#CONFIGURATION PARAMETERS
+#BEGIN - CONFIGURATION PARAMETERS
 SOUNDAPP = 'aplay'
-SOUNDFILE = '/usr/share/sounds/alert.wav'
+SOUNDFILE = '/usr/share/sounds/icecoder/wee-buzzer-alert.wav'
+
+sound_threshold = 5 #5 secs
+messg_threshold = 1 #1 sec
+#END - CONFIGURATION PARAMETERS
 
 sound_time = 0
 messg_time = 0
-sound_threshold = 5 #5 secs
-messg_threshold = 1 #1 sec
-
-#END - CONFIGURATION PARAMETERS
 
 nickname = ''
 
