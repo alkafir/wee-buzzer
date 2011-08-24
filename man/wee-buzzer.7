@@ -1,0 +1,63 @@
+.\"
+.\" Wee-buzzer plug-in for weechat
+.\" Licensed under GPL3
+.\"
+.\"
+
+.TH wee-buzzer 7 "August 2011" "Wee-buzzer" "Wee-buzzer Manual"
+
+.SH NAME
+wee-buzzer - Weechat message buzzer.
+
+.SH DESCRIPTION
+.BR wee-buzzer (7)
+warns the user by playing a sound when she receives a private message or
+is mentioned in a channel. It also writes on the main buffer to let you read the message in which
+you are mentioned faster.
+
+.SS Installation
+.RB "After installing " wee-buzzer "(7) with your package manager, it goes in it's standard location at"
+.IR "/usr/share/weechat/scripts/wee-buzzer.py" ". In order to enable it, you have to copy the file in your weechat"
+directory.
+.P
+You can use the command:
+.IR "'cp /usr/share/weechat/scripts/wee-buzzer.py ~/.weechat/python/autoload/'" ". Be sure the directory tree exists."
+
+.SH CONFIGURATION
+.BR wee-buzzer (7)
+can be configured by editing the script itself with a text editor.
+.P
+.RS 4
+.IR SOUNDAPP ": the application which will be used to play the sound, default is "
+.RB aplay (1).
+.RE
+.P
+.RS 4
+.IR SOUNDFILE ": the file to be played. Default: " "/usr/share/sounds/icecoder/wee-buzzer-alert.wav"
+.RE
+.P
+.RS 4
+.IR sound_threshold ": the minimum time between one sound play and another."
+.RE
+.P
+.RS 4
+.IR messg_threshold ": the minimum time between one text notify and another."
+.RE
+
+.SH FILES
+.IR "/usr/share/weechat/scripts/wee-buzzer.py" " the wee-buzzer script system-wide location."
+.IR "/usr/share/sounds/icecoder/wee-buzzer-alert.wav" " the wee-buzzer standard alert file."
+
+.SH SEE ALSO
+.BR weechat-curses (1)
+
+.SH HISTORY
+2011 - Originally written by
+.MT chimeranet89@\:gmail.com
+Alfredo 'IceCoder' Mungo
+.ME .
+
+.SH AUTHOR
+.MT chimeranet89@\:gmail.com
+Alfredo 'IceCoder' Mungo
+.ME
