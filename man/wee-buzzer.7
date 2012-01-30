@@ -1,0 +1,97 @@
+.\"
+.\" Wee-buzzer plug-in for weechat
+.\" Licensed under GPL3
+.\"
+.\"
+
+.TH WEE-BUZZER 7 "January 2012" "WEE-BUZZER" "Wee-buzzer Manual"
+
+.SH NAME
+wee-buzzer - Weechat message buzzer.
+
+.SH DESCRIPTION
+.BR wee-buzzer (7)
+warns the user by playing a sound when she receives a private message or
+is mentioned in a channel. It also writes on the main buffer to let you read the message in which you are mentioned faster. Since v1.1 you can also add buffers to a report-list, to be notified for messages.
+
+.SS Installation
+.RB "After installing " wee-buzzer "(7) with your package manager, it goes in it's standard location at"
+.IR "/usr/share/weechat/scripts/wee-buzzer.py" ". In order to enable it, you have to copy the file in your weechat python script directory."
+
+.P
+You can use the command:
+.P
+.RI cp " /usr/share/weechat/scripts/wee-buzzer.py ~/.weechat/python/autoload/"
+.P
+Be sure the destination directory tree exists.
+
+.SH CONFIGURATION
+.BR wee-buzzer (7)
+can be configured by editing the
+.IR plugins.var.python.wee-buzzer.*
+variables.
+.P
+.RS 4
+.IR sound_app ": the application which will be used to play the sound, default is "
+.BR aplay (1).
+.RE
+.P
+.RS 4
+.IR sound_file ": the file to be played. Default: " "/usr/share/sounds/icecoder/wee-buzzer-alert.wav"
+.RE
+.P
+.RS 4
+.IR sound_threshold ": the minimum time, in seconds, between one sound play and another. Default is 5."
+.RE
+.P
+.RS 4
+.IR messg_threshold ": the minimum time, in seconds, between one text notify and another. Default is 1."
+.RE
+.P
+.RS 4
+.IR beep ": 'on' to enable bell alert, 'off' to enable external application alert. Default is 'on'."
+.RE
+.P
+.RS 4
+.IR replist_autoremove ": 'on' to autoremove entries in the report-list after one beep, 'off' to beep every time a message is sent to the listed channels."
+.RE
+
+.SH COMMANDS
+.BR "/replist" " [add] | [del] | [list] | [on|off]"
+.P
+.RS 4
+.IR add ": add the current buffer to the report-list."
+.RE
+.RS 4
+.IR del ": remove the current buffer from the report-list."
+.RE
+.RS 4
+.IR list ": list the buffers currently on the report-list."
+.RE
+.RS 4
+.IR "on|off" ": enable/disable the report-list system."
+.RE
+.P
+With no arguments, the command displays the report-list status (on or off).
+
+.SH FILES
+.IR "/usr/share/weechat/scripts/wee-buzzer.py" ": the wee-buzzer script system-wide location."
+.P
+.IR "/usr/share/sounds/icecoder/wee-buzzer-alert.wav" ": the wee-buzzer standard alert file."
+
+.SH SEE ALSO
+.BR weechat-curses (1)
+.BR aplay (1)
+
+.SH HISTORY
+2011 - Originally written by
+.MT chimeranet89@\:gmail.com
+Alfredo 'IceCoder' Mungo
+.ME .
+.P
+Jan 29 2012: Released version 1.1, removed the old script variables, now options can be set directly within weechat, added report-list feature.
+
+.SH AUTHOR
+.MT chimeranet89@\:gmail.com
+Alfredo 'IceCoder' Mungo
+.ME

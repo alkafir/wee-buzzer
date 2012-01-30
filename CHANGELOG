@@ -1,0 +1,10 @@
+CHANGELOG
+Wee-buzzer - weechat buzzer module
+
+ v1.1
+
+  1. Refactored code to comply with standard python programming style.
+  2. Implemented weechat internal variables, to avoid script direct editing.
+  3. Implemented runtime check to avoid running the script outside weechat.
+  4. Implemented the beep feature.
+  5. Implemented the report-list feature.
